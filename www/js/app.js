@@ -25,11 +25,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('connection', {
       url: "/connection",
-      templateUrl: "templates/connection.html"
+      templateUrl: "templates/prehome.html"
     })
     .state('register', {
       url: "/register",
       templateUrl: "templates/register.html"
+    })
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html"
     })
     .state('app', {
       url: "/app",
@@ -45,8 +49,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.challenge', {
-      url: '/challenge',
+    .state('app.challengeMenu', {
+      url: '/challenges',
       views: {
         'menuContent': {
           templateUrl: 'templates/challenge/menu.html',
@@ -76,7 +80,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/challenge/listFinish.html',
         }
       }
-    })  // if none of the above states are matched, use this as the fallback
+    })
+    .state('app.challengeCard', {
+      url: '/challenge',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/card.html',
+        }
+      }
+    })
+    .state('app.profilList', {
+      url: '/profils',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profil/list.html',
+        }
+      }
+    })
+    .state('app.profilCard', {
+      url: '/profil',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profil/card.html',
+        }
+      }
+    })
+
+
   $urlRouterProvider.otherwise('/connection');
 });
 

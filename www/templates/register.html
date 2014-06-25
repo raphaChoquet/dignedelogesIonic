@@ -14,10 +14,25 @@
 		 	</label>
 		</div>
 		<div class="list list-inset">
-		<label for="">Age</label>
+			<label for="birthday">Date de naissance</label>
 			<div class="item range range-positive">
-				<input type="range" name="volume" min="0" max="100" value="0">
+				<input id="birthday" type="date" name="birthday" value="">
 			</div>
+		</div>
+		<div class="list list-inset">
+			<p>Sexe</p>
+			<label class="item item-radio radio-round">
+				<input type="radio" name="group">
+				<div class="item-content">
+					F
+				</div>
+			</label>
+			<label class="item item-radio radio-round">
+				<input type="radio" name="group">
+				<div class="item-content">
+					H
+				</div>
+			</label>
 		</div>
 		<div class="list list-inset">
 			<label class="item item-input">
@@ -37,7 +52,7 @@
 				<input type="password" placeholder="Password">
 			</label>
 		</div>
-		<ul class="list list-inset">
+		<ul class="list">
 			<li class="item item-checkbox">
 				<label class="checkbox">
 					<input type="checkbox">

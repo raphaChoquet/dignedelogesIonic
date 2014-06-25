@@ -37,23 +37,6 @@
 	text-overflow: normal;
 }
 
-.challenge-finish {
-	padding: 21px 0;
-	border-top: 1px solid #E5E5E5;
-}
-
-.challenge-finishe:first-child .item-inner {
-	border-top: 0;
-}
-
-.challenge-finish:nth-child(2n) {
-	background: #F5F5F5;
-}
-
-.challenge-finish h2{
-	margin: 0 20px ;
-}
-
 .profil img {
 	max-width: 75px;
 	max-height: 75px;
@@ -87,4 +70,37 @@
 	margin-left: 5px;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.radio-round {
+	width: 2em;
+	height: 2em;
+	border-radius: 50% !important;
+	text-align: center;
+}
+
+.radio-round .item-content {
+	padding: 0;
+	line-height: 2em;
+}
+
+
+
+
+/* Challenge */
+.challenge-finish {
+	padding: 21px 0;
+	border-top: 1px solid #E5E5E5;
+}
+
+.challenge-finishe:first-child .item-inner {
+	border-top: 0;
+}
+
+.challenge-finish:nth-child(2n) {
+	background: #F5F5F5;
+}
+
+.challenge-finish h2{
+	margin: 0 20px ;
 }
