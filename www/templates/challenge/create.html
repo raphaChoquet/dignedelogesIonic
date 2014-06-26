@@ -5,22 +5,28 @@
   <ion-content class="has-header" padding="true">
 		<div class="list list-inset">
 			<label class="item item-input">
-		 		<input type="text" placeholder="Titre du défi">
+		 		<input type="text" ng-model="form.title" placeholder="Titre du défi">
 		 	</label>
+		</div>
+		<div class="list">
+			<button class="button" on-touch="takePicture()">
+  				Upload
+			</button>
 		</div>
 		<div class="list list-inset upload">
 
 		</div>
 		<div class="list list-inset">
 			<label class="item item-input">
-				<textarea name="description" cols="20" rows="5" placeholder="Description"></textarea>
+				<textarea name="description" cols="20" rows="5" placeholder="Description" ng-model="form.description"></textarea>
 			</label>
 		</div>
+		<p>{{description}}</p>
 		<div class="list list-inset">
 			<div class="row">
 				<div class="col">
 					<a href="#/app/home" class="button button-block button-small button-positive">
-						Valider
+						Annuler
 					</a>
 				</div>
 				<div class="col">

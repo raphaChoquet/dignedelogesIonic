@@ -1,0 +1,40 @@
+<ion-view title="Browse">
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" padding="true">
+		<div class="list list-inset">
+			<label class="item item-input">
+		 		<input type="text" placeholder="Titre du défi">
+		 	</label>
+		</div>
+		<div class="list">
+			<button class="button" on-touch="upload()">
+  				Upload
+			</button>
+		</div>
+		<div class="list list-inset upload">
+
+		</div>
+		<div class="list list-inset">
+			<label class="item item-input">
+				<textarea name="description" cols="20" rows="5" placeholder="Description" ng-model="description"></textarea>
+			</label>
+		</div>
+		<p>{{description}}</p>
+		<div class="list list-inset">
+			<div class="row">
+				<div class="col">
+					<a href="#/app/home" class="button button-block button-small button-positive">
+						Annuler
+					</a>
+				</div>
+				<div class="col">
+					<a href="#/app/home" class="button button-block button-positive">
+						Valider
+					</a>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

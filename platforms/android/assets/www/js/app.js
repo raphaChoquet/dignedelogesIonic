@@ -23,16 +23,91 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
-      url: "/app",
-      templateUrl: "templates/home.html",
-      controller: 'AppCtrl'
+    .state('connection', {
+      url: "/connection",
+      templateUrl: "templates/prehome.html"
     })
     .state('register', {
       url: "/register",
       templateUrl: "templates/register.html"
-    });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app');
+    })
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html"
+    })
+    .state('app', {
+      url: "/app",
+      abstract: true,
+      templateUrl: "templates/menu.html",
+      controller: 'AppCtrl'
+    })
+    .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home.html',
+        }
+      }
+    })
+    .state('app.challengeMenu', {
+      url: '/challenges',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/menu.html',
+        }
+      }
+    })
+    .state('app.challengeCreate', {
+      url: '/challenge/create',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/create.html',
+          controller: 'CreateChallengeCtrl'
+        }
+      },
+    })
+    .state('app.challengeInProgress', {
+      url: '/challenge/inprogress',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/listInProgress.html',
+        }
+      }
+    })
+    .state('app.challengeFinished', {
+      url: '/challenge/finished',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/listFinish.html',
+        }
+      }
+    })
+    .state('app.challengeCard', {
+      url: '/challenge',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/card.html',
+        }
+      }
+    })
+    .state('app.profilList', {
+      url: '/profils',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profil/list.html',
+        }
+      }
+    })
+    .state('app.profilCard', {
+      url: '/profil',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profil/card.html',
+        }
+      }
+    })
+
+
+  $urlRouterProvider.otherwise('/connection');
 });
 
