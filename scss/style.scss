@@ -1,0 +1,194 @@
+body {
+	font-family:  $typo-p;
+	font-weight: 300;
+}
+
+h2 {
+	font-family: $typo-t;
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.bar .title {
+	font-weight: 700;
+	font-family: $typo-p;
+	font-size: 1.3rem;
+}
+
+.list-table {
+	position:absolute;
+	display: table;
+	background: rgba(255, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.list-table > .item {
+	display: table-row;
+}
+
+.list-table .item .item-inner {
+	border-top: 1px solid $stable;
+}
+
+.list-table .item:first-child .item-inner{
+	border-top: 0;
+}
+
+.list-table .item-inner {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 25px;
+	padding-right: 50px;
+	width: 100%;
+}
+
+
+.list-table .item-50 {
+	height: 50%;
+}
+
+.list-table .item-33 {
+	height: 33.333333%;
+}
+
+
+.list-table .item-inner h2 {
+	color: $positive;
+	font-size: 1.6em;
+	line-height: 1.5em;
+}
+
+.list-table .item-inner p {
+	max-width: 100%;
+	overflow: normal;
+	white-space: normal;
+	text-overflow: normal;
+}
+
+.profil img {
+	max-width: 75px;
+	max-height: 75px;
+	border: 1px solid $stable;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.profil-small img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.profil p {
+	margin: 0;
+}
+
+.profil .name {
+	font-size: 1.3em;
+	line-height: 1em;
+	font-family: $typo-t;
+	font-weight: 400;
+}
+
+.profil-block {
+	text-align: center;
+}
+
+.profil-inline .name {
+	line-height: 1.5em;
+}
+
+.profil-inline img {
+	vertical-align: middle;
+}
+
+.profil-inline figcaption {
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.radio-round {
+	width: 2em;
+	height: 2em;
+	border-radius: 50% !important;
+	text-align: center;
+}
+
+.radio-round .item-content {
+	padding: 0;
+	line-height: 2em;
+}
+
+
+
+.bg-1,
+.bg-2,
+.bg-3,
+.bg-4,
+.bg-5 {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bg-1 {
+	background-image: url('../img/bg-1.jpg');
+}
+
+.bg-2 {
+	background-image: url('../img/bg-2.jpg');
+}
+
+.bg-3 {
+	background-image: url('../img/bg-3.jpg');
+}
+
+.bg-4 {
+	background-image: url('../img/bg-4.jpg');
+}
+
+.bg-5 {
+	background-image: url('../img/bg-5.jpg');
+}
+
+/* Challenge */
+#challenge-finish .list{
+	margin: 0;
+	padding: 21px 0;
+	border-top: 1px solid $stable;
+}
+
+#challenge-finishe .list:first-child .item-inner {
+	border-top: 0;
+}
+
+#challenge-finish .list:nth-child(2n) {
+	background: $calm;
+}
+
+#challenge-finish h2 {
+	margin: 0 20px 20px;
+	font-size: 1.8em;
+}
+
+
+#profil-card {
+	padding: 20px;
+	background-color: $calm;
+}
+
+#profil-description {
+	padding: 20px;
+}
+
+#profil-description h2 {
+	font-size: 1.3em;
+}
