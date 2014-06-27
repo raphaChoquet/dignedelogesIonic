@@ -118,6 +118,7 @@
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.media-capture \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/com.ionic.keyboard/www \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
@@ -146,6 +147,9 @@
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file/www/requestFileSystem.js \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file/www/resolveLocalFileSystemURI.js \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file/www/android/FileSystem.js \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www/FileTransfer.js \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.file-transfer/www/FileTransferError.js \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/capture.js \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins/org.apache.cordova.media-capture/www/CaptureAudioOptions.js \

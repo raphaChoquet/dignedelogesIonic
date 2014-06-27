@@ -47,6 +47,7 @@
 		6201E3D9B4064872BBDC6B45 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E48C986A53466D9D6E6E66 /* CDVAssetLibraryFilesystem.m */; };
 		469F07F5DC914F3EB87A0270 /* CDVCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C66C20C6D346BCB7E3F93F /* CDVCapture.m */; };
 		B786E0618D9C4147B5FA2FF3 /* CDVCapture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9722712762F1467D9018840F /* CDVCapture.bundle */; };
+		EBC2279485B44C88A139B0D3 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 934BD95CB2384944BD151995 /* CDVFileTransfer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,8 @@
 		08C66C20C6D346BCB7E3F93F /* CDVCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVCapture.m"; path = "org.apache.cordova.media-capture/CDVCapture.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		523105B5C4084F568D142951 /* CDVCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVCapture.h"; path = "org.apache.cordova.media-capture/CDVCapture.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		9722712762F1467D9018840F /* CDVCapture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVCapture.bundle"; path = "CDVCapture.bundle"; sourceTree = "<group>"; };
+		934BD95CB2384944BD151995 /* CDVFileTransfer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVFileTransfer.m"; path = "org.apache.cordova.file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		042AD1C7616A484F8B2CE06F /* CDVFileTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVFileTransfer.h"; path = "org.apache.cordova.file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +268,8 @@
 				269D40EA30E1400B8D492F1B /* CDVAssetLibraryFilesystem.h */,
 				08C66C20C6D346BCB7E3F93F /* CDVCapture.m */,
 				523105B5C4084F568D142951 /* CDVCapture.h */,
+				934BD95CB2384944BD151995 /* CDVFileTransfer.m */,
+				042AD1C7616A484F8B2CE06F /* CDVFileTransfer.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -468,6 +473,7 @@
 				13FC9B42C34E4C8F8DFAF93D /* CDVLocalFilesystem.m in Sources */,
 				6201E3D9B4064872BBDC6B45 /* CDVAssetLibraryFilesystem.m in Sources */,
 				469F07F5DC914F3EB87A0270 /* CDVCapture.m in Sources */,
+				EBC2279485B44C88A139B0D3 /* CDVFileTransfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
