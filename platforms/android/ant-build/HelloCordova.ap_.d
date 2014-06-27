@@ -39,7 +39,15 @@
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/plugins \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/README.md \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/templates \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/css/app.css \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/css/ionic.app.css \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/css/ionic.app.min.css \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/css/style.css \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/bg-1.jpg \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/bg-2.jpg \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/bg-3.jpg \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/bg-4.jpg \
+/Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/bg-5.jpg \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/bn.jpg \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/fiche.png \
 /Applications/MAMP/htdocs/dignedelogesIonic/platforms/android/assets/www/img/ionic.png \

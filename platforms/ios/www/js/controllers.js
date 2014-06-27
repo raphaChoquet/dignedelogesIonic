@@ -28,8 +28,8 @@ angular.module('starter.controllers', [])
   }
 
   $scope.uploadVideo = function () {
-
     var upload = function (videoURI) {
+      
       var options = new FileUploadOptions();
       var ft = new FileTransfer();
       options.fileKey = "file";
@@ -39,16 +39,19 @@ angular.module('starter.controllers', [])
       options.httpMethod = "POST";
       options.params = $scope.form;
       //this is needed to grab the file correctly on IOS
-      videoURI = 'file://' + videoURI;  
+      videoURI = 'file://' + videoURI;
+
       ft.upload(videoURI, "http://192.168.56.1:8888/goodmood/web/app_dev.php/upload", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {
-      alert(response);
+      console.log(response);
+      $scope.response = response.response;
+      $scope.$digest();
     };
 
     var postFailure = function (error) {
-      alert(error);
+      console.log(error);
     };
     //call the upload function above with the video path on the scope
     upload($scope.video.fullPath);
