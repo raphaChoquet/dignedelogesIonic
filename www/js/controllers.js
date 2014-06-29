@@ -74,7 +74,7 @@ angular.module('starter.controllers', [])
       //this is needed to grab the file correctly on IOS
       videoURI = 'file://' + videoURI;
 
-      ft.upload(videoURI, "http://192.168.56.1/goodmood/web/app_dev.php/api/challenges/launcheds", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
+      ft.upload(videoURI, "http://api.dignedeloges.com/api/challenges/launcheds", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {
