@@ -6,7 +6,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
+  $rootScope.clientId = "6_62yxhdac42gwcck0wk8kk4ks84wswgk44ko4cg4wsw4c4sowsk";
+  $rootScope.clientSecret = "maqa75e9hyoooc008cg8ccc4s4gco8w80occo8gsg4cs0o000";
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -33,7 +36,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
     .state('login', {
       url: "/login",
-      templateUrl: "templates/login.html"
+      templateUrl: "templates/login.html",
+      controller: 'LoginCtrl'
     })
     .state('app', {
       url: "/app",

@@ -127,8 +127,6 @@ a {
 	line-height: 2em;
 }
 
-
-
 .bg-1,
 .bg-2,
 .bg-3,
@@ -157,6 +155,56 @@ a {
 
 .bg-5 {
 	background-image: url('../img/bg-5.jpg');
+}
+
+.bg-positive  {
+	background-color: $positive;
+	color: #FFF;
+}
+
+
+#prehome .item {
+	background-color: transparent;
+}
+
+#prehome .logo {
+	display: table-cell;
+	text-align: center;
+	padding: 0 30%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	vertical-align: bottom;
+}
+
+#prehome .logo img {
+	width: 100%;
+	max-width: 330px;
+	max-height: 356px;
+}
+
+#prehome .item-text {
+	height: 5em;
+}
+
+#prehome .item-text p {
+	display: table-cell;;
+	height: 5em;
+	overflow: normal;
+	white-space: normal;
+	text-overflow: normal;
+	font-size: 1.2em;
+	color: #FFF;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+#prehome .item:last-child {
+	height: 150px;
+}
+
+#prehome .item:last-child a {
+	margin-bottom: 20px;
 }
 
 /* Challenge */

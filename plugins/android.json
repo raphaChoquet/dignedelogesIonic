@@ -21,11 +21,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
+                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
+                            "xml": "<feature name=\"Capture\"><param name=\"android-package\" value=\"org.apache.cordova.mediacapture.Capture\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -64,10 +64,10 @@
         "org.apache.cordova.file": {
             "PACKAGE_NAME": "com.ionicframework.starter"
         },
-        "org.apache.cordova.media-capture": {
+        "org.apache.cordova.file-transfer": {
             "PACKAGE_NAME": "com.ionicframework.starter"
         },
-        "org.apache.cordova.file-transfer": {
+        "org.apache.cordova.media-capture": {
             "PACKAGE_NAME": "com.ionicframework.starter"
         }
     },

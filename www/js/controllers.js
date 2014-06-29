@@ -1,8 +1,39 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function ($scope) {
+.controller('AppCtrl', function ($scope, $rootScope, $location) {
+  if (!$rootScope.accessToken) {
+    $location.path( "/connection" );
+  }
 
 })
+
+.controller('LoginCtrl', function ($scope, $http, $rootScope, $location) {
+
+  if ($rootScope.accessToken) {
+    $location.path( "/app/home" );
+  }
+
+  $scope.form = {};
+
+  $scope.login = function ($event) {
+    if (!loginForm.$valid) {
+      return;
+    }
+    alert($scope.form.username);
+    alert($scope.form.password);
+    $http.get('http://symfo.dev/oauth/v2/token?client_id=' + $rootScope.clientId + '&client_secret=' + $rootScope.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
+      .success(function (data, status) {
+        $rootScope.accessToken = data.access_token;
+        $rootScope.refreshToken = data.refresh_token;
+        alert($rootScope.accessToken);
+        $location.path( "/app/home" );
+      })
+      .error(function (data, status) {
+        alert('error');
+      });
+  };
+})
+
 .controller('CreateChallengeCtrl', function ($scope) {
   $scope.takePicture = function () {
     var optionsVideo = {
@@ -29,7 +60,7 @@ angular.module('starter.controllers', [])
 
   $scope.uploadVideo = function () {
     var upload = function (videoURI) {
-      
+
       var options = new FileUploadOptions();
       var ft = new FileTransfer();
       options.fileKey = "file";
