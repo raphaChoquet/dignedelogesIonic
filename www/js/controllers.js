@@ -66,6 +66,7 @@ angular.module('starter.controllers', [])
 
       var options = new FileUploadOptions();
       var ft = new FileTransfer();
+      alert('test');
       options.fileKey = "file";
       //create a unique file name based on the timestamp, use this in the server for time information, or time metadata in the video clip itself.
       options.fileName = $scope.video.name;
@@ -75,7 +76,7 @@ angular.module('starter.controllers', [])
       //this is needed to grab the file correctly on IOS
       videoURI = 'file://' + videoURI;
 
-      ft.upload(videoURI, "http://192.168.56.1/goodmood/web/app_dev.php/upload", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
+      ft.upload(videoURI, "http://192.168.56.1/goodmood/web/app_dev.php/api/challenges/launcheds", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {
