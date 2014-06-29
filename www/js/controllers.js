@@ -1,9 +1,9 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function ($scope, $rootScope, $location) {
-  if (!$rootScope.accessToken) {
+ /* if (!$rootScope.accessToken) {
     $location.path( "/connection" );
-  }
+  }*/
 
 })
 
@@ -16,9 +16,10 @@ angular.module('starter.controllers', [])
   $scope.form = {};
 
   $scope.login = function ($event) {
-    if (!loginForm.$valid) {
+  /*  if (!loginForm.$valid) {
+      $scope.msgError = "error";
       return;
-    }
+    }*/
     alert($scope.form.username);
     alert($scope.form.password);
     $http.get('http://symfo.dev/oauth/v2/token?client_id=' + $rootScope.clientId + '&client_secret=' + $rootScope.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
@@ -72,7 +73,7 @@ angular.module('starter.controllers', [])
       //this is needed to grab the file correctly on IOS
       videoURI = 'file://' + videoURI;
 
-      ft.upload(videoURI, "http://192.168.56.1:8888/goodmood/web/app_dev.php/upload", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
+      ft.upload(videoURI, "http://192.168.56.1/goodmood/web/app_dev.php/upload", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {

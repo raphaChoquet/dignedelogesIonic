@@ -8,23 +8,35 @@
   </ion-pane>
 
   <ion-side-menu side="right">
-    <header class="bar bar-header bar-stable">
+    <header class="bar bar-header bar-light">
     </header>
-    <ion-content class="has-header">
-      <ion-list>
-        <ion-item nav-clear menu-close href="#/app/home">
-          Accueil
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/challenges">
-          Défis
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/profils">
-          Profils
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/home">
-          Paramètres
-        </ion-item>
-      </ion-list>
+    <ion-content scroll="false" class="has-header">
+      <div class="list list-table">
+        <a class="item" href="#/app/challenges">
+          <div class="item-inner item-icon-right">
+            <h2>Accueil</h2>
+            <i class="icon ion-ios7-telephone-outline"></i>
+          </div>
+        </a>
+        <a class="item item-icon-right" href="#/app/profils">
+          <div class="item-inner">
+            <h2>Défis</h2>
+            <i class="icon ion-ios7-telephone-outline"></i>
+          </div>
+        </a>
+        <a class="item item-icon-right" href="#/app/profils">
+          <div class="item-inner">
+            <h2>Profils</h2>
+            <i class="icon ion-ios7-telephone-outline"></i>
+          </div>
+        </a>
+        <a class="item item-icon-right" href="#/app/profils">
+          <div class="item-inner">
+            <h2>Paramètres</h2>
+            <i class="icon ion-ios7-telephone-outline"></i>
+          </div>
+        </a>
+      </div>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

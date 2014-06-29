@@ -1,6 +1,7 @@
 body {
 	font-family:  $typo-p;
 	font-weight: 300;
+	color: $dark;
 }
 
 h2 {
@@ -22,7 +23,6 @@ a {
 .list-table {
 	position:absolute;
 	display: table;
-	background: rgba(255, 0, 0, 0.5);
 	height: 100%;
 	width: 100%;
 	table-layout: fixed;
@@ -76,7 +76,7 @@ a {
 .profil img {
 	max-width: 75px;
 	max-height: 75px;
-	border: 1px solid $stable;
+	border: 2px solid $positive;
 	border-radius: 50%;
 	overflow: hidden;
 }
@@ -91,10 +91,15 @@ a {
 }
 
 .profil .name {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	line-height: 1em;
-	font-family: $typo-t;
+	font-family: $typo-p;
 	font-weight: 400;
+}
+
+.profil .info {
+	font-size: 0.9em;
+	color: $greyLight;
 }
 
 .profil-block {
@@ -127,41 +132,56 @@ a {
 	line-height: 2em;
 }
 
-.bg-1,
-.bg-2,
-.bg-3,
-.bg-4,
-.bg-5 {
+.bg {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.bg-1 {
-	background-image: url('../img/bg-1.jpg');
+.bg-100 {
+	background-image: url('../img/bg-100.jpg');
 }
 
-.bg-2 {
-	background-image: url('../img/bg-2.jpg');
+.bg-50-1 {
+	background-image: url('../img/bg-50-1.jpg');
 }
 
-.bg-3 {
-	background-image: url('../img/bg-3.jpg');
+.bg-50-2 {
+	background-image: url('../img/bg-50-2.jpg');
 }
 
-.bg-4 {
-	background-image: url('../img/bg-4.jpg');
+
+.bg-30-1 {
+	background-image: url('../img/bg-30-1.jpg');
 }
 
-.bg-5 {
-	background-image: url('../img/bg-5.jpg');
+.bg-30-2 {
+	background-image: url('../img/bg-30-2.jpg');
 }
+
+.bg-30-3 {
+	background-image: url('../img/bg-30-3.jpg');
+}
+
 
 .bg-positive  {
 	background-color: $positive;
 	color: #FFF;
 }
 
+
+.tb {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.tb-cell {
+	display: table-cell;
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
+}
 
 #prehome .item {
 	background-color: transparent;
@@ -207,6 +227,11 @@ a {
 	margin-bottom: 20px;
 }
 
+
+#login .list-inset{
+	background: transparent;
+}
+
 /* Challenge */
 #challenge-finish .list{
 	margin: 0;
@@ -225,6 +250,18 @@ a {
 #challenge-finish h2 {
 	margin: 0 20px 20px;
 	font-size: 1.8em;
+	border-bottom: 1px solid $dark;
+	font-weight: 700;
+	color: $dark;
+}
+
+#challenge-finish .list .row {
+	margin-bottom: 1em;
+}
+
+#challenge-finish .list .row:last-child {
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
 

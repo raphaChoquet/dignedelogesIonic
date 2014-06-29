@@ -4,26 +4,28 @@
 	    	<i class="ion-chevron-left"></i>
 	  	</ion-nav-back-button>
 	</ion-nav-bar>
-	<ion-content padding="true">
-		<form role="form" name="loginForm">
-			<div class="alert-error">{{msg_error}}</div>
-			<div class="list list-inset">
-				<label class="item item-input">
-					<i class="icon ion-email placeholder-icon"></i>
-			 		<input type="text" placeholder="Username" name="username" ng-model="form.username" require>
-			 	</label>
-			</div>
-			<div class="list list-inset">
-				<label class="item item-input">
-					<i class="icon ion-locked placeholder-icon"></i>
-			 		<input type="password" placeholder="Password" name="password" ng-model="form.password">
-			 	</label>
-			</div>
-			<div class="list list-inset">
-				<button class="button button-block button-positive" ng-click="login($event)">
-					Valider
-				</button>
-			</div>
-		</form>
+	<ion-content id="login" padding="true" scroll="false" class="bg bg-100">
+		<div class="tb">
+			<form role="form" name="loginForm" class="tb-cell">
+				<div class="alert-error" ng-if="msgError">{{msgError}}</div>
+				<div class="list list-inset">
+					<label class="item item-input">
+						<i class="icon ion-email placeholder-icon"></i>
+				 		<input type="text" placeholder="Username" name="username" ng-model="form.username" require>
+				 	</label>
+				</div>
+				<div class="list list-inset">
+					<label class="item item-input">
+						<i class="icon ion-locked placeholder-icon"></i>
+				 		<input type="password" placeholder="Password" name="password" ng-model="form.password">
+				 	</label>
+				</div>
+				<div class="list list-inset">
+					<button class="button button-block button-positive" ng-click="login($event)">
+						Valider
+					</button>
+				</div>
+			</form>
+		</div>
 	</ion-content>
 </ion-view>
