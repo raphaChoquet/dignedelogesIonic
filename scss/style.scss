@@ -183,6 +183,15 @@ a {
 	vertical-align: middle;
 }
 
+.alert-error {
+	background-color: $energized;
+	left: 0;
+	position: fixed;
+	top: 43px;
+	width: 100%;
+	padding:
+}
+
 #prehome .item {
 	background-color: transparent;
 }
