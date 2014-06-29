@@ -13,13 +13,16 @@ angular.module('starter.controllers', [])
     $location.path( "/app/home" );
   }
 
-  $scope.form = {};
+  $scope.form = {
+    username: '',
+    password: ''
+  };
 
   $scope.login = function ($event) {
-  /*  if (!loginForm.$valid) {
+    if (!loginForm.$valid) {
       $scope.msgError = "error";
       return;
-    }*/
+    }
     alert($scope.form.username);
     alert($scope.form.password);
     $http.get('http://symfo.dev/oauth/v2/token?client_id=' + $rootScope.clientId + '&client_secret=' + $rootScope.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
@@ -30,7 +33,6 @@ angular.module('starter.controllers', [])
         $location.path( "/app/home" );
       })
       .error(function (data, status) {
-        alert('error');
       });
   };
 })
