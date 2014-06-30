@@ -7150,15 +7150,21 @@ a {
   display: inline-block;
   vertical-align: middle; }
 
-.radio-round {
-  width: 2em;
-  height: 2em;
-  border-radius: 50% !important;
+.radio-round, .radio-round-m {
+  width: 40%;
+  height: 40px;
+  border-radius: 50px !important;
   text-align: center; }
 
-.radio-round .item-content {
+.radio-round {
+  float: left; }
+
+.radio-round-m {
+  float: right; }
+
+.radio-round .item-content, .radio-round-m .item-content {
   padding: 0;
-  line-height: 2em; }
+  line-height: 2.4em; }
 
 .bg {
   background-size: cover;
@@ -7277,5 +7283,31 @@ a {
 #profil-description {
   padding: 20px; }
 
-#profil-description h2 {
-  font-size: 1.3em; }
+#profil-challenge {
+  padding: 20px; }
+
+#profil-challenge i {
+  display: block;
+  font-size: 2.5em;
+  color: #fff;
+  text-align: center;
+  background-color: #E26462;
+  width: 2em;
+  padding-top: 17px;
+  height: 2em;
+  border-radius: 50%; }
+
+#profil-challenge ul li {
+  display: inline-block;
+  width: 24.8%; }
+
+.underline::after {
+  content: '';
+  width: 100%;
+  background-color: #000;
+  height: 1px;
+  display: block; }
+
+.arrow-menu {
+  top: auto !important;
+  height: auto !important; }
