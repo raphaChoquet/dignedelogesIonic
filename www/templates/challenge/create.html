@@ -9,12 +9,10 @@
 		 		<input type="text" ng-model="form.title" placeholder="Titre du défi">
 		 	</label>
 		</div>
-		<div class="list">
-			<button class="button" on-touch="takePicture()">
-  				Upload
-			</button>
-			<button class="button" on-touch="uploadVideo()">
-  				Validate
+		<div class="list list-inset">
+			<button class="button-upload" on-touch="takePicture()">
+				<i class="icon ion-ios7-telephone-outline"></i>
+  				<span>Prendre une vidéo</span>
 			</button>
 		</div>
 		<div class="list list-inset upload">
@@ -22,7 +20,7 @@
 		</div>
 		<div class="list list-inset">
 			<label class="item item-input">
-				<textarea name="description" cols="20" rows="5" placeholder="Description" ng-model="form.description"></textarea>
+				<textarea name="description" cols="20" rows="5" placeholder="Description du défi" ng-model="form.description"></textarea>
 			</label>
 		</div>
 		<p>{{description}}</p>
@@ -40,7 +38,7 @@
 					</a>
 				</div>
 				<div class="col">
-					<a href="#/app/home" class="button button-block button-positive">
+					<a href="#/app/home" on-touch="uploadVideo()" class="button button-block button-positive">
 						Valider
 					</a>
 				</div>

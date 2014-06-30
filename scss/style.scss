@@ -337,6 +337,39 @@ a {
 	display: block;
 }
 
+.button-upload {
+	background-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ddd;
+	padding: 20px;
+	width: 100%;
+	font-size: 1em;
+	position: relative;
+	height: 245px;
+}
+
+.button-upload span {
+	position: absolute;
+	left: 50%;
+	margin-left: -58px;
+	bottom: 10%;
+}
+
+.button-upload > .icon {
+	display: block;
+	background-color: #E26462;
+	height: 1.5em;
+	width: 1.5em;
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	margin-left: -.75em;
+	border-radius: 50%;
+	font-size: 8em;
+	color: #fff;
+}
+
 .icon2 {
 	display: block;
 	font-size: 1.5em;
