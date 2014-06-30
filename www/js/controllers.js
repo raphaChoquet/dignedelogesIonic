@@ -74,8 +74,6 @@ angular.module('starter.controllers', [])
       options.httpMethod = "POST";
       options.params = $scope.form;
       //this is needed to grab the file correctly on IOS
-      videoURI = 'file://' + videoURI;
-
       ft.upload(videoURI, "http://api.dignedeloges.com/api/challenges/launcheds", postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
@@ -89,6 +87,6 @@ angular.module('starter.controllers', [])
       console.log(error);
     };
     //call the upload function above with the video path on the scope
-    upload($scope.video.fullPath);
+    upload($scope.video.localURL);
   }
 });

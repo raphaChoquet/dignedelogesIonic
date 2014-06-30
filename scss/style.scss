@@ -36,6 +36,7 @@ a {
 
 .list-table .item .item-inner {
 	border-top: 1px solid $stable;
+	position: relative;
 }
 
 .list-table .item:first-child .item-inner{
@@ -100,6 +101,10 @@ a {
 .profil .info {
 	font-size: 0.9em;
 	color: $greyLight;
+}
+
+.profil-inline {
+	display: inline-block;
 }
 
 .profil-block {
@@ -309,9 +314,19 @@ a {
 	border-radius:50%; 
 }
 
-#profil-challenge ul li {
-	display: inline-block;
-	width: 24.8%;
+#profil-challenge table {
+	width: 100%;
+	display: table;
+}
+
+#profil-challenge table td {
+	width: 25%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#profil-challenge table td:last-child {
+	float: right;
 }
 
 .underline::after {
@@ -322,7 +337,16 @@ a {
 	display: block;
 }
 
-.arrow-menu {
-	top: auto !important;
-	height: auto !important;
+.icon2 {
+	display: block;
+	font-size: 1.5em;
+	color: #fff;
+	margin-top: 13px;
+	text-align: center;
+	background-color: #E26462;
+	width: 2em;
+	float: right;
+	padding-top: 12px;
+	height: 2em;
+	border-radius:50%; 
 }
