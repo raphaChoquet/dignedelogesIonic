@@ -3,47 +3,47 @@
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header" padding="true">
-		<div class="list list-inset">
-	  		<h2 class="underline">Le défi</h2>
-			<label class="item item-input">
-		 		<input type="text" ng-model="form.title" placeholder="Titre du défi">
-		 	</label>
-		</div>
-		<div class="list list-inset">
-			<button class="button-upload" on-touch="takePicture()">
-				<i class="icon ion-ios7-telephone-outline"></i>
-  				<span>Prendre une vidéo</span>
-			</button>
-		</div>
-		<div class="list list-inset upload">
+		<form role="form" name="launchChallenge">
+			<div class="list list-inset">
+		  		<h2 class="underline">Le défi</h2>
+				<label class="item item-input">
+			 		<input type="text" name="title" ng-model="form.title" placeholder="Titre du défi" required ng-class="">
+			 	</label>
+			</div>
+			<div class="list list-inset">
+				<button class="button-upload" on-tap="takePicture()">
+					<i class="icon ion-ios7-telephone-outline"></i>
+	  				<span>Prendre une vidéo</span>
+				</button>
+			</div>
+			<div class="list list-inset upload">
 
-		</div>
-		<div class="list list-inset">
-			<label class="item item-input">
-				<textarea name="description" cols="20" rows="5" placeholder="Description du défi" ng-model="form.description"></textarea>
-			</label>
-		</div>
-		<p>{{description}}</p>
-		<div class="list list-inset">
+			</div>
+			<div class="list list-inset">
+				<label class="item item-input">
+					<textarea name="description" cols="20" rows="5" placeholder="Description du défi (optionnel)" ng-model="form.description"></textarea>
+				</label>
+			</div>
+		<!-- 	<div class="list list-inset">
 			<h2 class="underline">Définir la visibilité</h2>
 		</div>
 		<div class="list list-inset">
 			<h2 class="underline">Durée du défi</h2>
-		</div>
-		<div class="list list-inset">
-			<div class="row">
-				<div class="col">
-					<a href="#/app/home" class="button button-block button-small button-positive">
-						Annuler
-					</a>
-				</div>
-				<div class="col">
-					<a href="#/app/home" on-touch="uploadVideo()" class="button button-block button-positive">
-						Valider
-					</a>
+		</div> -->
+			<div class="list list-inset">
+				<div class="row">
+					<div class="col">
+						<a href="#/app/home" class="button button-block button-small button-stable">
+							Annuler
+						</a>
+					</div>
+					<div class="col">
+						<button on-touch="uploadVideo()" class="button button-block button-positive">
+							Valider
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
-		{{response}}
+		</form>
 	</ion-content>
 </ion-view>

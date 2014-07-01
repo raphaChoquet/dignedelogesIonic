@@ -7,8 +7,8 @@
 angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform, $rootScope) {
-  $rootScope.clientId = "6_62yxhdac42gwcck0wk8kk4ks84wswgk44ko4cg4wsw4c4sowsk";
-  $rootScope.clientSecret = "maqa75e9hyoooc008cg8ccc4s4gco8w80occo8gsg4cs0o000";
+  $rootScope.clientId = "1_4deff7bk6o840k8goks804kcsscwogg8sckcssocw48gsc0s8g";
+  $rootScope.clientSecret = "c51a942gp7w4g00os8kk00o0o4c088k88cgoc8scckw00wwos";
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
