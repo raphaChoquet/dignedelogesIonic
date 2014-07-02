@@ -107,7 +107,7 @@ angular.module('starter.controllers', [])
         'form[description]': $scope.form.description
       };
       //this is needed to grab the file correctly on IOS
-      ft.upload(videoURI, $rootScope.url + "/app_dev.php/api/challenges/launcheds?access_token=" + $rootScope.user.accessToken, postSuccess, postFailure, options, true); //boolean is for trustAllHosts
+      ft.upload(videoURI, $rootScope.url + "/api/challenges/launcheds?access_token=" + $rootScope.user.accessToken, postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {
@@ -117,8 +117,7 @@ angular.module('starter.controllers', [])
     };
 
     var postFailure = function (error) {
-      alert('erreur');
-      console.log(error);
+      navigator.notification.alert(error.code + ': Impossible d\'envoyer la vidéo', null, 'Erreur de récupération');
     };
 
     if ($scope.launchChallenge.$valid && $scope.video) {
@@ -127,16 +126,26 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ListProfilCtrl', function ($rootScope, $http) {
+.controller('ListProfilCtrl', function ($scope, $rootScope, $http) {
   if ($rootScope.userInfos.genre === "M") {
-    var url = $rootScope.url + '/app_dev.php/api/user/men?access_token=' + $rootScope.user.accessToken;
+    var url = $rootScope.url + '/api/user/men?access_token=' + $rootScope.user.accessToken;
   } else {
-    var url = $rootScope.url + '/app_dev.php/api/user/women?access_token=' + $rootScope.user.accessToken;
+    var url = $rootScope.url + '/api/user/women?access_token=' + $rootScope.user.accessToken;
   }
   $http.get(url)
     .success(function (data) {
       $scope.users = data;
-    }).error(function() {
+    }).error(function(error) {
       navigator.notification.alert(error.code + ': Impossible de récupérer les profils', null, 'Erreur de récupération');
     });
 })
+
+.controller('MyCtrl1', function($scope, $routeParams, $rootScope, $http) {
+  var username = $routeParams.param;
+  $http.get($rootScope.url + '/api/users/' + username + '?access_token=' + $rootScope.user.accessToken;})
+  .success(function (data) {
+    $scope.user = data;
+  }).error(function(error) {
+    navigator.notification.alert(error.code + ': Impossible de récupérer le profil de ' + username, null, 'Erreur de récupération');
+  });
+});

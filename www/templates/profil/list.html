@@ -5,13 +5,13 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
 <div class="list">
-    <a class="item item-icon-right" href="#/app/profil" ng-repeat="user in users">
+    <a class="item item-icon-right" href="#/app/profil/{{user.username}}" ng-repeat="user in users">
         <figure class="profil profil-inline">
           <img src="/img/bn.jpg" >
           <figcaption>
-            <p class="name">{{user.name}}</p>
+            <p class="name">{{user.username}}</p>
             <p class="info">{{user.city}}</p>
-            <p class="info">{{user.birdthdate}}</p>
+            <p class="info">{{user.birthdate}}</p>
           </figcaption>
         </figure>
         <i class="icon2 ion-ios7-telephone-outline"></i>
