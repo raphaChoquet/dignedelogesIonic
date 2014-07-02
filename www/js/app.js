@@ -110,6 +110,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.parameters', {
+      url: '/parameters',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/parameters.html',
+        }
+      }
+    })
 
 
   $urlRouterProvider.otherwise('/connection');

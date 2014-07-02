@@ -7215,7 +7215,7 @@ a {
   top: 43px;
   width: 100%; }
 
-#prehome .item {
+#prehome .item, #parameters .item:first-child {
   background-color: transparent; }
 
 #prehome .logo {
@@ -7250,6 +7250,56 @@ a {
 
 #prehome .item:last-child a {
   margin-bottom: 20px; }
+
+#parameters .logo img {
+  width: 100%;
+  max-width: 184px;
+  max-height: 202px; }
+
+#parameters .logo {
+  display: table-cell;
+  text-align: center;
+  padding-top: 25px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  vertical-align: top; }
+
+#parameters .logo figcaption {
+  display: table-cell; }
+
+#parameters .item table {
+  display: table; }
+
+#parameters .item table tr {
+  display: table-row;
+  height: 50px;
+  border-top: 1px solid #fff;
+  box-sizing: border-box; }
+
+#parameters .item table tr td {
+  display: table-cell;
+  width: 82%;
+  vertical-align: middle;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box; }
+
+#parameters .item table tr td p, #parameters .item table tr td h2 {
+  padding-left: 20px; }
+
+#parameters .item table tr td:first-child {
+  background-color: #f1b2b1;
+  width: 9%;
+  border-bottom: none;
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  min-width: 55px; }
+
+#parameters .item table tr td:last-child {
+  color: #ccc;
+  font-size: 1.5em;
+  text-align: center;
+  width: 9%; }
 
 #login .list-inset {
   background: transparent; }
@@ -7290,29 +7340,6 @@ a {
 #profil-challenge {
   padding: 20px; }
 
-#profil-challenge i {
-  display: block;
-  font-size: 2.5em;
-  color: #fff;
-  text-align: center;
-  background-color: #E26462;
-  width: 2em;
-  padding-top: 17px;
-  height: 2em;
-  border-radius: 50%; }
-
-#profil-challenge table {
-  width: 100%;
-  display: table; }
-
-#profil-challenge table td {
-  width: 25%;
-  display: table-cell;
-  vertical-align: middle; }
-
-#profil-challenge table td:last-child {
-  float: right; }
-
 .underline::after {
   content: '';
   width: 100%;
@@ -7329,7 +7356,7 @@ a {
   width: 100%;
   font-size: 1em;
   position: relative;
-  height: 245px; }
+  height: 123px; }
 
 .button-upload span {
   position: absolute;
@@ -7343,11 +7370,12 @@ a {
   height: 1.5em;
   width: 1.5em;
   position: absolute;
-  top: 20px;
+  top: 15px;
+  padding-top: 3px;
   left: 50%;
   margin-left: -0.75em;
   border-radius: 50%;
-  font-size: 8em;
+  font-size: 3em;
   color: #fff; }
 
 .icon2 {
@@ -7362,3 +7390,27 @@ a {
   padding-top: 12px;
   height: 2em;
   border-radius: 50%; }
+
+.time {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30px; }
+
+.time i {
+  color: #E26462;
+  font-size: 1.6em; }
+
+.time p {
+  font-size: 0.9em;
+  color: #aaa; }
+
+.validate .row {
+  display: table; }
+
+.validate .col {
+  vertical-align: bottom;
+  display: table-cell;
+  width: auto; }
+
+.validate .button-stable {
+  background-color: #f8f8f8; }

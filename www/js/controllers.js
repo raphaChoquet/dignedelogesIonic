@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
     //success callback
     var captureSuccess = function (mediaFiles) {
       $scope.video = mediaFiles[0];
-      alert($scope.video.size);*
+      alert($scope.video.size);
       if ($scope.video.size > 31457280 ) {
         navigator.notification.confirm("Erreur la vidéo dépasse la taille maximal autorisé de 30mo", function (i) { if (i===1) {capture();}}, 'Taille maximal', ['Reprendre une vidéo', 'Annuler']);
         $scope.video = null;

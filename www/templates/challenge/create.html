@@ -1,4 +1,4 @@
-<ion-view title="Browse">
+<ion-view title="Créer un défi">
   <ion-nav-buttons side="right">
     <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -16,9 +16,6 @@
 	  				<span>Prendre une vidéo</span>
 				</button>
 			</div>
-			<div class="list list-inset upload">
-
-			</div>
 			<div class="list list-inset">
 				<label class="item item-input">
 					<textarea name="description" cols="20" rows="5" placeholder="Description du défi (optionnel)" ng-model="form.description"></textarea>
@@ -30,15 +27,17 @@
 		<div class="list list-inset">
 			<h2 class="underline">Durée du défi</h2>
 		</div> -->
-			<div class="list list-inset">
+			<div class="list list-inset validate">
 				<div class="row">
 					<div class="col">
 						<a href="#/app/home" class="button button-block button-small button-stable">
+							<i class="icon ion-ios7-telephone-outline"></i>
 							Annuler
 						</a>
 					</div>
 					<div class="col">
 						<button on-touch="uploadVideo()" class="button button-block button-positive">
+							<i class="icon ion-ios7-telephone-outline"></i>
 							Valider
 						</button>
 					</div>
