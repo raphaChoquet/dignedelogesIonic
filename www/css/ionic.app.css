@@ -7414,3 +7414,6 @@ a {
 
 .validate .button-stable {
   background-color: #f8f8f8; }
+
+.gender:checked {
+  background-color: #f8f8f8; }
