@@ -142,7 +142,7 @@ angular.module('starter.controllers', [])
 
 .controller('MyCtrl1', function($scope, $routeParams, $rootScope, $http) {
   var username = $routeParams.param;
-  $http.get($rootScope.url + '/api/users/' + username + '?access_token=' + $rootScope.user.accessToken;})
+  $http.get($rootScope.url + '/api/users/' + username + '?access_token=' + $rootScope.user.accessToken)
   .success(function (data) {
     $scope.user = data;
   }).error(function(error) {
