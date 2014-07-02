@@ -5,9 +5,9 @@ angular.module('starter.controllers', [])
     $location.path( "/connection" );
   }
 
-  $http.get('http://api.dignedeloges.com/api/me?access_token=' + $rootScope.user.accessToken)
+  $http.get($rootScope.url + '/api/me?access_token=' + $rootScope.user.accessToken)
     .success(function (data) {
-      alert(JSON.stringify(data));
+      $rootScope.userInfos = data;
     })
     .error(function (error) {
       navigator.notification.alert(error.code + ': Impossible de récupérer vos informations personnelles', null, 'Alerte');
@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
       $scope.msgError = "error";
       return;
     }*/
-    $http.get('http://api.dignedeloges.com/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
+    $http.get($rootScope.url + '/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
       .success(function (data, status) {
         $rootScope.user.accessToken = data.access_token;
         $rootScope.user.refreshToken = data.refresh_token;
@@ -107,7 +107,7 @@ angular.module('starter.controllers', [])
         'form[description]': $scope.form.description
       };
       //this is needed to grab the file correctly on IOS
-      ft.upload(videoURI, "http://api.dignedeloges.com/app_dev.php/api/challenges/launcheds?access_token=" + $rootScope.user.accessToken, postSuccess, postFailure, options, true); //boolean is for trustAllHosts
+      ft.upload(videoURI, $rootScope.url + "/app_dev.php/api/challenges/launcheds?access_token=" + $rootScope.user.accessToken, postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {
@@ -125,4 +125,18 @@ angular.module('starter.controllers', [])
       upload($scope.video.localURL);
     }
   }
-});
+})
+
+.controller('ListProfilCtrl', function ($rootScope, $http) {
+  if ($rootScope.userInfos.genre === "M") {
+    var url = $rootScope.url + '/app_dev.php/api/user/men?access_token=' + $rootScope.user.accessToken;
+  } else {
+    var url = $rootScope.url + '/app_dev.php/api/user/women?access_token=' + $rootScope.user.accessToken;
+  }
+  $http.get(url)
+    .success(function (data) {
+      $scope.users = data;
+    }).error(function() {
+      navigator.notification.alert(error.code + ': Impossible de récupérer les profils', null, 'Erreur de récupération');
+    });
+})
