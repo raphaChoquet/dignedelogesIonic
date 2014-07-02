@@ -1,13 +1,32 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function ($scope, $rootScope, $location) {
- /* if (!$rootScope.accessToken) {
+.controller('AppCtrl', function ($scope, $rootScope, $location, $http) {
+  if (!$rootScope.user.accessToken) {
     $location.path( "/connection" );
-  }*/
+  }
 
+  $http.get('http://api.dignedeloges.com/api/me?access_token=' + $rootScope.user.accessToken)
+    .success(function (data) {
+      alert(JSON.stringify(data));
+    })
+    .error(function (error) {
+      navigator.notification.alert(error.code + ': Impossible de récupérer vos informations personnelles', null, 'Alerte');
+    });
 })
 
-.controller('LoginCtrl', function ($scope, $http, $rootScope, $location) {
+.controller('ConnectionCtrl', function ($rootScope, $location) {
+  if ($rootScope.user.accessToken) {
+    $location.path( "/app/home" );
+  }
+})
+
+.controller('LoginCtrl', function ($scope, $http, $rootScope, $location, User) {
+  if ($rootScope.user.accessToken) {
+    $location.path( "/app/home" );
+  }
+/*
+  $scope.user = User.get();
+  console.log($scope.user);*/
 
   if ($rootScope.accessToken) {
     $location.path( "/app/home" );
@@ -18,18 +37,19 @@ angular.module('starter.controllers', [])
     password: ''
   };
 
-  $scope.login = function ($event) {
-    if (!loginForm.$valid) {
+  $scope.login = function () {
+
+/*    if (!loginForm.$valid ) {
       $scope.msgError = "error";
       return;
-    }
-    alert($scope.form.username);
-    alert($scope.form.password);
-    $http.get('http://api.dignedeloges.com/oauth/v2/token?client_id=' + $rootScope.clientId + '&client_secret=' + $rootScope.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
+    }*/
+    $http.get('http://api.dignedeloges.com/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
       .success(function (data, status) {
-        $rootScope.accessToken = data.access_token;
-        $rootScope.refreshToken = data.refresh_token;
-        alert($rootScope.accessToken);
+        $rootScope.user.accessToken = data.access_token;
+        $rootScope.user.refreshToken = data.refresh_token;
+        $rootScope.user.dateConnection = new Date();
+        $rootScope.user.expireIn = data.expires_in;
+        User.save($rootScope.user);
         $location.path( "/app/home" );
       })
       .error(function (data, status) {
@@ -87,7 +107,7 @@ angular.module('starter.controllers', [])
         'form[description]': $scope.form.description
       };
       //this is needed to grab the file correctly on IOS
-      ft.upload(videoURI, "http://api.dignedeloges.com/app_dev.php/api/challenges/launcheds?access_token=" + $rootScope.accessToken, postSuccess, postFailure, options, true); //boolean is for trustAllHosts
+      ft.upload(videoURI, "http://api.dignedeloges.com/app_dev.php/api/challenges/launcheds?access_token=" + $rootScope.user.accessToken, postSuccess, postFailure, options, true); //boolean is for trustAllHosts
     };
 
     var postSuccess = function (response) {

@@ -5,10 +5,51 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
+.factory('User', function ($http, $rootScope) {
+  return {
+    get: function () {
+      var userString = window.localStorage['User'];
+      if(userString) {
+        return angular.fromJson(userString);
+      } else {
+        return false
+      }
+    },
+    save: function(user) {
+      window.localStorage['User'] = angular.toJson(user);
+    },
+    refresh: function () {
+      var self = this;
+      $http.get('http://api.dignedeloges.com/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=refresh_token&refresh_token=' + $rootScope.user.refreshToken)
+        .success(function (data, status) {
+          $rootScope.user.accessToken = data.access_token;
+          $rootScope.user.refreshToken = data.refresh_token;
+          $rootScope.user.dateConnection = new Date();
+          $rootScope.user.expireIn = data.expires_in;
+          self.save($rootScope.user);
+          window.setTimeout(function () {
+            self.refresh();
+          }, 3500000);
+      });
+    }
+  }
+})
+.run(function($ionicPlatform, $rootScope, User, $http, $location) {
+  $rootScope.url = 'http://symfo.dev/';
 
-.run(function($ionicPlatform, $rootScope) {
-  $rootScope.clientId = "1_4deff7bk6o840k8goks804kcsscwogg8sckcssocw48gsc0s8g";
-  $rootScope.clientSecret = "c51a942gp7w4g00os8kk00o0o4c088k88cgoc8scckw00wwos";
+  $rootScope.user = User.get();
+  if ($rootScope.user === false) {
+    $rootScope.user = {
+      clientId: "6_62yxhdac42gwcck0wk8kk4ks84wswgk44ko4cg4wsw4c4sowsk",
+      clientSecret: "maqa75e9hyoooc008cg8ccc4s4gco8w80occo8gsg4cs0o000"
+    };
+
+    User.save($rootScope.user);
+  }
+
+  if ($rootScope.user.refreshToken) {
+    User.refresh();
+  }
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -28,7 +69,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('connection', {
       url: "/connection",
-      templateUrl: "templates/prehome.html"
+      templateUrl: "templates/prehome.html",
+      controller: 'ConnectionCtrl'
     })
     .state('register', {
       url: "/register",
@@ -118,7 +160,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-
 
   $urlRouterProvider.otherwise('/connection');
 });
