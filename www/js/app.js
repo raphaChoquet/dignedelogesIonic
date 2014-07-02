@@ -40,8 +40,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $rootScope.user = User.get();
   if ($rootScope.user === false) {
     $rootScope.user = {
-      clientId: "6_62yxhdac42gwcck0wk8kk4ks84wswgk44ko4cg4wsw4c4sowsk",
-      clientSecret: "maqa75e9hyoooc008cg8ccc4s4gco8w80occo8gsg4cs0o000"
+      clientId: "1_3kal02cieam8cog44ggo04wcg0wcg80w84scokko08sgksccwc",
+      clientSecret: "x5ruh0pqzmswcogwk0o8g0cw4gcs488sow8csosskgo44s0gg"
     };
 
     User.save($rootScope.user);
