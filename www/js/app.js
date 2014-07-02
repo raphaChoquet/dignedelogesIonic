@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     },
     refresh: function () {
       var self = this;
-      $http.get('http://api.dignedeloges.com/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=refresh_token&refresh_token=' + $rootScope.user.refreshToken)
+      $http.get($rootScope.url + '/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=refresh_token&refresh_token=' + $rootScope.user.refreshToken)
         .success(function (data, status) {
           $rootScope.user.accessToken = data.access_token;
           $rootScope.user.refreshToken = data.refresh_token;
@@ -141,6 +141,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/profil/list.html',
+          controller: 'ListProfilCtrl'
         }
       }
     })
