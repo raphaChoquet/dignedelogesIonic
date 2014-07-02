@@ -45,6 +45,7 @@ angular.module('starter.controllers', [])
     }*/
     $http.get($rootScope.url + '/oauth/v2/token?client_id=' + $rootScope.user.clientId + '&client_secret=' + $rootScope.user.clientSecret + '&grant_type=password&username=' + $scope.form.username + '&password=' + $scope.form.password)
       .success(function (data, status) {
+        alert('pass');
         $rootScope.user.accessToken = data.access_token;
         $rootScope.user.refreshToken = data.refresh_token;
         $rootScope.user.dateConnection = new Date();
@@ -127,7 +128,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ListProfilCtrl', function ($scope, $rootScope, $http) {
-  if ($rootScope.userInfos.genre === "M") {
+  if ($rootScope.userInfos.genre === "H") {
     var url = $rootScope.url + '/api/user/men?access_token=' + $rootScope.user.accessToken;
   } else {
     var url = $rootScope.url + '/api/user/women?access_token=' + $rootScope.user.accessToken;
@@ -140,12 +141,34 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('MyCtrl1', function($scope, $routeParams, $rootScope, $http) {
-  var username = $routeParams.param;
-  $http.get($rootScope.url + '/api/users/' + username + '?access_token=' + $rootScope.user.accessToken;})
+.controller('CardProfilCtrl', function($scope, $stateParams, $rootScope, $http) {
+  var username = $stateParams.param;
+  $http.get($rootScope.url + '/api/users/' + username + '?access_token=' + $rootScope.user.accessToken)
   .success(function (data) {
     $scope.user = data;
+    $scope.user.date = $scope.user.date;
+    console.log($scope.user.date);
   }).error(function(error) {
     navigator.notification.alert(error.code + ': Impossible de récupérer le profil de ' + username, null, 'Erreur de récupération');
   });
+})
+
+
+.controller('ListChallengeCtrl', function($scope, $stateParams, $rootScope, $http) {
+  var param = $stateParams.param;
+   if ($rootScope.userInfos.genre === "F" && param === "inProgress") {
+    $http.get('')
+      .success(function (data) {
+        $scope.challenges = data;
+      }).error(function(error) {
+        navigator.notification.alert(error.code + ': Impossible d\'obtenir les défis en cours', null, 'Erreur de récupération');
+      });
+  } else if ($rootScope.userInfos.genre === "H" && param === "All") {
+    $http.get($rootScope.url + '/api/challengesLauncheds/')
+      .success(function (data) {
+        $scope.challenges = data;
+      }).error(function(error) {
+        navigator.notification.alert(error.code + ': Impossible d\'obtenir les défis en cours', null, 'Erreur de récupération');
+      });
+  }
 });

@@ -41,6 +41,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $rootScope.user = User.get();
   if ($rootScope.user === false) {
     $rootScope.user = {
+
+      //Local
+      /* clientId: "6_62yxhdac42gwcck0wk8kk4ks84wswgk44ko4cg4wsw4c4sowsk",
+      clientSecret: "62yxhdac42gwcck0wk8kk4ks84wswgk44ko4cg4wsw4c4sowsk"*/
+      //Serveur
       clientId: "1_3kal02cieam8cog44ggo04wcg0wcg80w84scokko08sgksccwc",
       clientSecret: "x5ruh0pqzmswcogwk0o8g0cw4gcs488sow8csosskgo44s0gg"
     };
@@ -67,7 +72,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-
     .state('connection', {
       url: "/connection",
       templateUrl: "templates/prehome.html",
@@ -113,6 +117,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       },
     })
+    .state('app.challengeAll', {
+      url: '/challenge/list/:param',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenge/all.html',
+          controller: 'AllChallengeCtrl'
+        }
+      }
+    })
     .state('app.challengeInProgress', {
       url: '/challenge/inprogress',
       views: {
@@ -151,7 +164,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/profil/card.html',
-          controller: 'cardProfilCtrl'
+          controller: 'CardProfilCtrl'
         }
       }
     })
